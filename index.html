@@ -4,6 +4,20 @@
     <meta charset="UTF-8">
     <title>VanUSee</title>
     <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap" rel="stylesheet">
+    /* 皮肤展示 */
+    <link rel="stylesheet" href="skinviewer.css">
+    <link rel="stylesheet" href="skinviewer-animation.css">
+    <script src="skinviewer.js"></script>
+    <script>
+        const container = document.querySelector('.my-custom-skinviewer');
+        const skinViewer = new SkinViewer({ container });
+        skinViewer.setSkinType(SkinViewer.SKIN_TYPE.STEVE);
+        const customSkin = new Image();
+        customSkin.onload = () => {
+            skinViewer.setSkin(customSkin);
+        }
+        customSkin.src = 'https://crafatar.com/skins/7de7c8a705d8456d9f97515e46a95bac';
+    </script>
     <style>
         /* 原有通用样式 */
         body {
@@ -231,6 +245,15 @@
             left: -46px;
         }
 
+        /* 皮肤展示 */
+        .my-custom-skinviewer {
+            position: absolute;
+            width: 160px;
+            right: 15%;
+            bottom: 15%;
+            z-index: 1; /* 在背景之上但低于文字 */
+        }
+
         /* 动画修复 */
         @keyframes float {
             0%, 100% { 
@@ -273,6 +296,9 @@
         <div class="tree-crown-border"></div>
         <div class="tree-crown-block"></div>
     </div>
+
+    <!-- 皮肤展示 -->
+    <div class="my-custom-skinviewer d-skin-aciton-walk"></div>
 
     <div class="container">
         <h1>来VanUSee，<br>来玩<span class="symbol">♂</span>游戏</h1>

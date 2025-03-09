@@ -8,16 +8,6 @@
     <link rel="stylesheet" href="skinviewer.css">
     <link rel="stylesheet" href="skinviewer-animation.css">
     <script src="skinviewer.js"></script>
-    <script>
-        const container = document.querySelector('.my-custom-skinviewer');
-        const skinViewer = new SkinViewer({ container });
-        skinViewer.setSkinType(SkinViewer.SKIN_TYPE.STEVE);
-        const customSkin = new Image();
-        customSkin.onload = () => {
-            skinViewer.setSkin(customSkin);
-        }
-        customSkin.src = 'https://crafatar.com/skins/7de7c8a705d8456d9f97515e46a95bac';
-    </script>
     <style>
         /* 原有通用样式 */
         body {
@@ -306,5 +296,16 @@
     </div>
 
     <div class="designer">created by deepseek</div>
+    <!-- 皮肤展示 -->
+    <script>
+        const container = document.querySelector('.my-custom-skinviewer');
+        const skinViewer = new SkinViewer({ container });
+        skinViewer.setSkinType(SkinViewer.SKIN_TYPE.STEVE);
+        const customSkin = new Image();
+        customSkin.onload = () => {
+            skinViewer.setSkin(customSkin);
+        }
+        customSkin.src = 'https://crafatar.com/skins/7de7c8a705d8456d9f97515e46a95bac';
+    </script>
 </body>
 </html>

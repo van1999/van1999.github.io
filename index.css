@@ -1,0 +1,297 @@
+/* 原有通用样式 */
+body {
+    margin: 0;
+    height: 100vh;
+    background: #78ab64;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Pixelify Sans', cursive;
+    position: relative;
+    overflow: hidden;
+}
+
+.mc-bg {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image:
+        linear-gradient(to right, 
+            rgba(93,122,79,0.2) 1px, 
+            transparent 1px),
+        linear-gradient(to bottom, 
+            rgba(93,122,79,0.2) 1px, 
+            transparent 1px),
+        radial-gradient(circle at 10% 10%, 
+            rgba(139,166,123,0.3) 2%, 
+            transparent 5%),
+        radial-gradient(circle at 90% 90%, 
+            rgba(139,166,123,0.3) 2%, 
+            transparent 5%);
+    background-size: 32px 32px;
+    z-index: 0;
+}
+
+.container {
+    background: rgba(0, 0, 0, 0.7);
+    padding: 40px 60px;
+    border: 4px solid #3d3d3d;
+    box-shadow:
+        0 0 0 4px #5a5a5a inset,
+        8px 8px 0 rgba(0,0,0,0.3);
+    text-align: center;
+    position: relative;
+    z-index: 2;
+    /* 提高层级确保在树和云之上 */
+}
+
+h1 {
+    color: #FFD700;
+    font-size: 3.5em;
+    margin: 0;
+    line-height: 1.2;
+    text-shadow: 3px 3px 0 #B8860B;
+}
+
+.symbol {
+    color: #FF6B6B;
+    font-size: 0.9em;
+    vertical-align: super;
+}
+
+/* 修复云朵样式 */
+.pixel-cloud {
+    position: absolute;
+    width: 124px;
+    height: 100px;
+    top: 20%;
+    right: 10%;
+    animation: float 6s ease-in-out infinite;
+    z-index: 1;
+    /* 确保在背景之上 */
+}
+
+.pixel-cloud-shadow {
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    width: 124px;
+    height: 100px;
+    clip-path: polygon(
+                0 24px,
+                24px 24px,
+                24px 0,
+                76px 0,
+                76px 24px,
+                124px 24px,
+                124px 76px,
+                100px 76px,
+                100px 100px,
+                72px 100px,
+                72px 76px,
+                0 76px
+            );
+    background: rgba(0,0,0,0.1);
+}
+
+.pixel-cloud-border {
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    width: 124px;
+    height: 100px;
+    clip-path: polygon(
+                0 24px,
+                24px 24px,
+                24px 0,
+                76px 0,
+                76px 24px,
+                124px 24px,
+                124px 76px,
+                100px 76px,
+                100px 100px,
+                72px 100px,
+                72px 76px,
+                0 76px
+            );
+    background: #e0e0e0;
+}
+
+.pixel-cloud-block {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 120px;
+    height: 96px;
+    clip-path: polygon(
+                0 24px,
+                24px 24px,
+                24px 0,
+                72px 0,
+                72px 24px,
+                120px 24px,
+                120px 72px,
+                96px 72px,
+                96px 96px,
+                72px 96px,
+                72px 72px,
+                0 72px
+            );
+    background: #fff;
+}
+
+.designer {
+    position: absolute;
+    bottom: 12px;
+    right: 12px;
+    color: rgba(255,255,255,0.3);
+    font-size: 0.7em;
+    font-family: 'Pixelify Sans';
+    z-index: 3;
+    /* 最顶层 */
+}
+
+/* 新增橡树样式 */
+.pixel-tree {
+    position: absolute;
+    width: 76px;
+    height: 100px;
+    left: 15%;
+    bottom: 15%;
+    z-index: 1;
+    /* 在背景之上但低于文字 */
+    animation: sway 8s ease-in-out infinite;
+}
+
+.tree-shadow {
+    position: absolute;
+    width: 124px;
+    height: 124px;
+    clip-path: polygon(
+                0 24px,
+                24px 24px,
+                24px 0,
+                100px 0,
+                100px 24px,
+                124px 24px,
+                124px 52px,
+                76px 52px,
+                76px 124px,
+                48px 124px,
+                48px 52px,
+                0 52px
+            );
+    background: rgba(0,0,0,0.1);
+    top: -21px;
+    left: -45px;
+}
+
+.tree-trunk {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 24px;
+    height: 96px;
+    background: #6b451d;
+    border: 2px solid #4a2b0f;
+}
+
+.tree-crown-border {
+    position: absolute;
+    width: 124px;
+    height: 52px;
+    clip-path: polygon(
+                0 24px,
+                24px 24px,
+                24px 0,
+                100px 0,
+                100px 24px,
+                124px 24px,
+                124px 52px,
+                0 52px
+            );
+    background: #2d3f1d;
+    top: -24px;
+    left: -48px;
+}
+
+.tree-crown-block {
+    position: absolute;
+    width: 120px;
+    height: 48px;
+    clip-path: polygon(
+                0 24px,
+                24px 24px,
+                24px 0,
+                96px 0,
+                96px 24px,
+                120px 24px,
+                120px 48px,
+                0 48px
+            );
+    background: #3d5829;
+    top: -22px;
+    left: -46px;
+}
+
+/* 皮肤展示 */
+.my-custom-skinviewer {
+    position: absolute;
+    width: 36px;
+    height: 72px;
+    right: 15%;
+    bottom: 15%;
+    z-index: 1;
+    /* 在背景之上但低于文字 */
+}
+
+.my-custom-skinviewer > div {
+    transform: scale(3);
+}
+
+/* 动画修复 */
+@keyframes float {
+    0%, 100% {
+        transform: translate(0, 0) rotate(-1deg);
+    }
+
+    33% {
+        transform: translate(5px, -8px) rotate(2deg);
+    }
+
+    66% {
+        transform: translate(-5px, 4px) rotate(-2deg);
+    }
+}
+
+@keyframes sway {
+    0%, 100% {
+        transform: translateX(0) rotate(0deg);
+    }
+
+    25% {
+        transform: translateX(-3px) rotate(-1deg);
+    }
+
+    75% {
+        transform: translateX(3px) rotate(1deg);
+    }
+}
+
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2.8em;
+    }
+
+    .container {
+        padding: 30px;
+    }
+
+    .pixel-cloud {
+        right: 5%;
+    }
+
+    .pixel-tree {
+        left: 5%;
+    } /* 移动端位置调整 */
+}

@@ -249,6 +249,16 @@ h1 {
     transform: scale(3);
 }
 
+/* 装饰框 */
+.content-box {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 720px;
+    height: 360px;
+}
+
 /* 动画修复 */
 @keyframes float {
     0%, 100% {
